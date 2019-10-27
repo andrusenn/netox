@@ -1,4 +1,4 @@
-var server = require('./server.js.js')
+var server = require('./server.js')
 
 server.initServer();
 
