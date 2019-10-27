@@ -1,6 +1,4 @@
-// const SocketIo = require('socket.io')
-
-var server = require('./server.js')
+var server = require('./server.js.js')
 
 server.initServer();
 
