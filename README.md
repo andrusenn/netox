@@ -4,4 +4,10 @@
 
 `npm install && npm start`
 
-abrir `client/index.html` en el browser
+Node genera un server en puerto 7777
+
+Para conectarse desde un dispositivo de la misma red:
+
+Url: `ip_del_servidor:7777`
+
+Ejemplo: `192.168.0.8:7777`
