@@ -52,7 +52,9 @@ function createWindow() {
       mainWindow.loadFile('index.html')
       // mainWindow.webContents.openDevTools()
       // mainWindow.webContents.openDevTools({ mode: 'detach' })
-
+      // creat el servidor para el cliente -------------
+      require('./client.js')
+      //
       mainWindow.on('closed', function () {
             mainWindow = null
       })
