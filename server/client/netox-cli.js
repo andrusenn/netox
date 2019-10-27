@@ -15,7 +15,7 @@ function getServerVars(variable) {
       }
 }
 function start() {
-      SERVER_IP = (getServerVars('ip') == '') ? SERVER_IP : getServerVars('ip')
+      SERVER_IP = (getServerVars('ip') == '') ? window.location.hostname : getServerVars('ip')
       SERVER_PORT = (getServerVars('port') == '') ? SERVER_PORT : getServerVars('port')
       conn = io.connect('http://' + SERVER_IP + ':' + SERVER_PORT);
 
@@ -32,11 +32,30 @@ function start() {
       //       console.log('conectado');
       // })
 }
-document.addEventListener('mousemove', function (e) {
-      conn.emit('cliente', {
-            x: e.clientX,
-            y: e.clientY,
-            w: window.innerWidth,
-            h: window.innerHeight,
-      })
-})
+// document.addEventListener('mousemove', function (e) {
+//       conn.emit('cliente', {
+//             x: e.clientX,
+//             y: e.clientY,
+//             w: window.innerWidth,
+//             h: window.innerHeight,
+//       })
+// })
+
+function setup(){
+      createCanvas(windowWidth,windowHeight)
+
+}
+function draw(){
+      background(127)
+      if(mouseIsPressed){
+            conn.emit('cliente', {
+                  x: mouseX,
+                  y: mouseY,
+                  w: width,
+                  h: height,
+            })
+      }
+}
+function windowResized(){
+      resizeCanvas(windowWidth,windowHeight)
+}
