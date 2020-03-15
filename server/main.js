@@ -20,35 +20,7 @@ function createWindow() {
       mainWindow.center();
       //mainWindow.setAlwaysOnTop(true);
       mainWindow.setMenuBarVisibility(false);
-      if (app.isPackaged) {
-            // Directorio leparc_resources
-            // mkdir(path.join(resourcesPath, 'leparc_resources'), () => {
-            //       // Directorio -> leparc_resources/save
-            //       mkdir(path.join(resourcesPath, 'leparc_resources', 'save'), () => {
-            //             writef(path.join(resourcesPath, 'leparc_resources', 'save', 'auxcode.txt'), '// Hola LeParc!!');
-            //       })
-            //       // Directorio -> leparc_resources/snippets
-            //       mkdir(path.join(resourcesPath, 'leparc_resources', 'snippets'), () => {
-            //             fs.copy(path.join(appPath, 'leparc_resources', 'snippets'), path.join(resourcesPath, 'leparc_resources', 'snippets'), () => {
-            //                   chmodall(path.join(resourcesPath, 'leparc_resources', 'snippets'))
-            //             })
-            //       })
-            //       // Directorio -> leparc_resources/libs 
-            //       mkdir(path.join(resourcesPath, 'leparc_resources', 'libs'))
-            //       // Directorio -> leparc_resources/media 
-            //       mkdir(path.join(resourcesPath, 'leparc_resources', 'media'))
-            //       // Directorio -> leparc_resources/config
-            //       mkdir(path.join(resourcesPath, 'leparc_resources', 'config'), () => {
-            //             writef(path.join(resourcesPath, 'leparc_resources', 'config', 'config.txt'), "server-ip=127.0.0.1\nport=7777\nmfr=0.001")
-            //       })
-            //       // Directorio -> leparc_resources/extends
-            //       mkdir(path.join(resourcesPath, 'leparc_resources', 'extends'), () => {
-            //             fs.copy(path.join(appPath, 'leparc_resources', 'extends'), path.join(resourcesPath, 'leparc_resources', 'extends'), () => {
-            //                   chmodall(path.join(resourcesPath, 'leparc_resources', 'extends'))
-            //             })
-            //       })
-            // })
-      }
+      
       mainWindow.loadFile('index.html')
       // mainWindow.webContents.openDevTools()
       // mainWindow.webContents.openDevTools({ mode: 'detach' })
@@ -75,58 +47,6 @@ app.on('activate', function () {
 exports.exit = function () {
       app.exit();
 }
-// export const path = function () {
-//       return path
-// }
-// export const setFull = function () {
-//       mainWindow.setKiosk(true)
-//       mainWindow.setMenu(null);
-//       mainWindow.setMenuBarVisibility(false)
-// }
-// export const setUnFull = function () {
-//       mainWindow.setKiosk(false)
-//       mainWindow.setMenu(null);
-//       mainWindow.setMenuBarVisibility(false)
-// }
-// export const getMemory = function () {
-//       return Math.round((os.freemem() / os.totalmem()) * 100);
-// }
-// export const getIP = function () {
-//       return ip.address()
-// }
-
-// export const saveCode = (file, data) => {
-//       fs.writeFile(path.join(resourcesPath, 'leparc_resources', 'save', file + ".txt"), data, function (err) {
-//             if (err) throw err;
-//       });
-// }
-// export const resizeWin = function (w, h) {
-//       if (mainWindow.isMaximized()) {
-//             mainWindow.unmaximize();
-//       } else
-//             if (mainWindow.isKiosk()) {
-//                   mainWindow.setKiosk(false)
-//             }
-//       mainWindow.setMenuBarVisibility(false)
-//       mainWindow.setBounds({ width: w, height: h });
-//       mainWindow.center()
-// }
-// export const devTools = function (open) {
-//       if (open) {
-//             mainWindow.webContents.openDevTools({ mode: 'right' });
-//       } else {
-//             mainWindow.webContents.closeDevTools();
-//       }
-// }
-// export const reload = function () {
-//       if (arguments.length == 1) {
-//             global.settings.renderer = arguments[0]
-//       }
-//       mainWindow.loadFile('index.html');
-// }
-// export const resourcesPath = function () {
-//       return resourcesPath;
-// }
 
 // Utils
 function mkdir(path, fn) {
