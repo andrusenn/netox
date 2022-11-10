@@ -9,7 +9,7 @@
       "author": "netox",
       "license": "ISC",
       "devDependencies": {
-            "electron": "^4.2.7",
+            "electron": "^18.3.7",
             "electron-builder": "^21.2.0"
       },
       "dependencies": {
